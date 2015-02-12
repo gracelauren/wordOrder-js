@@ -1,7 +1,6 @@
 var wordOrder = function(userString) {
   var newArray = userString.toLowerCase().split(" ");
   var counter = {};
-  var resultArray = Array();
 
 
   newArray.forEach(function(userWord) {
@@ -10,18 +9,17 @@ var wordOrder = function(userString) {
       userWord = userWord.replace(/[,.!?""]/g,"");
     }
 
-    if (counter[userWord] !== 1) {
+    if (counter[userWord] === undefined) {
       counter[userWord] = 1;
     } else {
       counter[userWord] += 1;
-    };
+    }
 
 
   });
   for( var objName in counter) {
-    resultArray.push(objName);
-    
+    var resultArray = Object.keys(counter).sort(function(a, b) {return counter[b]-counter[a]});
+
   }
-  debugger;
   return resultArray;
 };

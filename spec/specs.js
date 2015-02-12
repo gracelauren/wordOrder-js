@@ -17,6 +17,6 @@ describe("wordOrder", function() {
   });
 
   it("returns an array of word appearance in descending order", function() {
-    expect(wordOrder("hey world world")).to.eql(["world", "hey"]);
+    expect(wordOrder("hey hey world hi world world")).to.eql(["world", "hey", "hi"]);
   });
 });
