@@ -15,4 +15,8 @@ describe("wordOrder", function() {
   it("returns one instance of the word if the word is entered multiple times", function() {
     expect(wordOrder("world world")).to.eql(["world"]);
   });
+
+  it("returns an array of word appearance in descending order", function() {
+    expect(wordOrder("hey world world")).to.eql(["world", "hey"]);
+  });
 });

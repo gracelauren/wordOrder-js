@@ -18,10 +18,9 @@ var wordOrder = function(userString) {
 
 
   });
-  for( var t in counter) {
-    resultArray.push(counter[t]);
-    // for( var g in final) {
-    // }
+  for( var objName in counter) {
+    resultArray.push(objName);
+    
   }
   debugger;
   return resultArray;
