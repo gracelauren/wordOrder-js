@@ -42,7 +42,7 @@ $(document).ready(function() {
     result.forEach(function(eachWord) {
       $("ul.orderList").append('<li>'+eachWord+'</li>');
     });
-
+    $('ul li:empty').remove();
 
 
     $("#result").show();
