@@ -6,12 +6,17 @@ var wordOrder = function(userString) {
   newArray.forEach(function(userWord) {
     if (/[,.!?"":;]/.test(userWord)) {
       userWord = userWord.replace(/[,.!?"":;]/g,"");
-    } 
-    if (counter[userWord] === undefined) {
-      counter[userWord] = 1;
+        if (counter[userWord] === undefined) {
+          counter[userWord] = 1;
+        } else {
+          counter[userWord] += 1;
+        }
     } else {
-      counter[userWord] += 1;
-    }
+      if (counter[userWord] === undefined) {
+        counter[userWord] = 1;
+      } else {
+        counter[userWord] += 1;
+      }
     };
 
 
