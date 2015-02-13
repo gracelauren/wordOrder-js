@@ -41,7 +41,9 @@ $(document).ready(function() {
     var phrase = $("input#phrase").val();
     var result = wordOrder(phrase);
     result.forEach(function(eachWord) {
+      if($(eachWord !== ""){
       $("ul.orderList").append('<li>'+eachWord+'</li>');
+      }
     });
 
 
