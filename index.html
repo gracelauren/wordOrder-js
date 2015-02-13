@@ -5,26 +5,25 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Coin Combinations</title>
+    <title>Word Order</title>
   </head>
   <body>
 
     <div class="middle">
-      <h1>Coin Combinations</h1>
+      <h1>Word Order</h1>
 
-      <form id="coinAmounts">
-        <div  class="form-group" id="fancy-inputs">
+      <form id="orderMe">
+        <div class="form-group" id="styleMe">
           <label class="input">
-            <input id="amount" type="text">
-            <span><span>Enter The Amount of Money You Have:</span></span>
+            <input id="phrase" type="text">
+            <span><span>Please Enter a Phrase Here</span></span>
           </label>
         </div>
+        <button type="submit" class="btn">Order it!</button>
       </form>
-      <button type="submit" class="btn">We Want Change!</button>
       <div id="result">
-        <h5>
-          The coins you have are: <span class="change"></span>
-        </h5>
+        <h5> Your list of words in order of how many times they appear are:</h5>
+          <ul class="orderList"></ul>
       </div>
     </div>
 
