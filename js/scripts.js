@@ -4,15 +4,20 @@ var wordOrder = function(userString) {
 
 
   newArray.forEach(function(userWord) {
-    // if (/[,.!?""]/.test(userWord)) {     possibly needed for efficiency
-      userWord = userWord.replace(/[,.!?""]/g,"");
-    // }
-
-    if (counter[userWord] === undefined) {
-      counter[userWord] = 1;
+    if (/[,.!?"":;]/.test(userWord)) {
+      userWord = userWord.replace(/[,.!?"":;]/g,"");
+        if (counter[userWord] === undefined) {
+          counter[userWord] = 1;
+        } else {
+          counter[userWord] += 1;
+        }
     } else {
-      counter[userWord] += 1;
-    }
+      if (counter[userWord] === undefined) {
+        counter[userWord] = 1;
+      } else {
+        counter[userWord] += 1;
+      }
+    };
 
 
   });
@@ -35,10 +40,9 @@ $(document).ready(function() {
     var phrase = $("input#phrase").val();
     var result = wordOrder(phrase);
     result.forEach(function(eachWord) {
-      $("ul.orderList").append("<li>"+eachWord+"</li>");
+      $("ul.orderList").append('<li>'+eachWord+'</li>');
     });
 
-    $(".orderList").text(result);
 
 
     $("#result").show();
