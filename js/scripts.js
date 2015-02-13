@@ -25,6 +25,7 @@ var wordOrder = function(userString) {
     var resultArray = Object.keys(counter).sort(function(a, b) {return counter[b]-counter[a]});
 
   }
+  resultArray.filter(Boolean);
   return resultArray;
 };
 
